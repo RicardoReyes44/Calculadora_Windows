@@ -8,6 +8,12 @@ public class Calculadora extends JFrame{
 	JButton btnResta = new JButton();
 	JButton btnMult = new JButton();
 	JButton btnDiv = new JButton();
+	
+	JButton btnIgual = new JButton();
+	JButton btnPunto= new JButton();
+	JButton btnBorrar = new JButton();
+	JButton btnMasMenos = new JButton();
+	
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
 
