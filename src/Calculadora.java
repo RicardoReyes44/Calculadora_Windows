@@ -44,7 +44,6 @@ public class Calculadora extends JFrame{
 
 
 
-
 	// -------------------------------------------------
 	//                    Constructor
 	// -------------------------------------------------
@@ -56,8 +55,10 @@ public class Calculadora extends JFrame{
 		setTitle("Calculadora");
 		setVisible(true);
 		gbc.fill = GridBagConstraints.BOTH;
+		setResizable(false);
 		
 		txtCaja.setFont(fuente);
+		txtCaja.setHorizontalAlignment(JTextField.RIGHT);
 
 		// --------------------------------------------------
 		
