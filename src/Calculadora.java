@@ -1,8 +1,10 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class Calculadora extends JFrame{
+public class Calculadora extends JFrame implements ActionListener{
 
 	// -------------------------------------------------
 	//                     Widgets
@@ -41,6 +43,7 @@ public class Calculadora extends JFrame{
 	
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
+
 
 
 
@@ -84,15 +87,15 @@ public class Calculadora extends JFrame{
 		alinearElemento(2, 4, 1, 1, btnSeis);
 		alinearElemento(3, 4, 1, 1, btnResta);
 		
-		alinearElemento(0, 4, 1, 1, btnUno);
-		alinearElemento(1, 4, 1, 1, btnDos);
-		alinearElemento(2, 4, 1, 1, btnTres);
-		alinearElemento(3, 4, 1, 1, btnSuma);
+		alinearElemento(0, 5, 1, 1, btnUno);
+		alinearElemento(1, 5, 1, 1, btnDos);
+		alinearElemento(2, 5, 1, 1, btnTres);
+		alinearElemento(3, 5, 1, 1, btnSuma);
 		
-		alinearElemento(0, 5, 1, 1, btnMasMenos);
-		alinearElemento(1, 5, 1, 1, btnCero);
-		alinearElemento(2, 5, 1, 1, btnPunto);
-		alinearElemento(3, 5, 1, 1, btnIgual);
+		alinearElemento(0, 6, 1, 1, btnMasMenos);
+		alinearElemento(1, 6, 1, 1, btnCero);
+		alinearElemento(2, 6, 1, 1, btnPunto);
+		alinearElemento(3, 6, 1, 1, btnIgual);
 		
 		// --------------------------------------------------
 		
@@ -123,8 +126,18 @@ public class Calculadora extends JFrame{
 
 
 
+
 	// -------------------------------------------------
 	//                    Eventos
 	// -------------------------------------------------
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource()==btnSuma) {
+			System.out.println("SUMA");
+		}
+		
+	}
 
 }
