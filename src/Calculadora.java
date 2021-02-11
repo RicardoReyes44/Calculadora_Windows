@@ -21,6 +21,12 @@ public class Calculadora extends JFrame{
 	JButton btnSiete = new JButton();
 	JButton btnCE = new JButton();
 	JButton btnMasMenos = new JButton();
+
+	JButton btnOcho = new JButton();
+	JButton btnC = new JButton();
+	JButton btnCinco = new JButton();
+	JButton btnDos = new JButton();
+	JButton btnCero = new JButton();
 	
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
