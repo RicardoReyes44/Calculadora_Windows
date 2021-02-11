@@ -8,6 +8,7 @@ public class Calculadora extends JFrame{
 	//                     Widgets
 	// -------------------------------------------------
 	
+	Font fuente = new Font("Calibri", 1, 20);
 	JTextField txtCaja = new JTextField("0");
 	
 	JButton btnSuma = new JButton("+");
@@ -55,8 +56,12 @@ public class Calculadora extends JFrame{
 		setTitle("Calculadora");
 		setVisible(true);
 		gbc.fill = GridBagConstraints.BOTH;
+		
+		txtCaja.setFont(fuente);
 
 		// --------------------------------------------------
+		
+		alinearElemento(0, 0, 1, 4, txtCaja);
 		
 		alinearElemento(0, 1, 1, 1, btnPorcentaje);
 		alinearElemento(1, 1, 1, 1, btnRaiz);
