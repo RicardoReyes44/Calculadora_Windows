@@ -51,6 +51,7 @@ public class Calculadora extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Calculadora");
 		setVisible(true);
+		gbc.fill = GridBagConstraints.BOTH;
 
 		// --------------------------------------------------
 		
@@ -58,6 +59,11 @@ public class Calculadora extends JFrame{
 		alinearElemento(1, 0, 1, 1, btnRaiz);
 		alinearElemento(2, 0, 1, 1, btnCuadrado);
 		alinearElemento(3, 0, 1, 1, btnUnoSobreX);
+		
+		alinearElemento(0, 1, 1, 1, btnCE);
+		alinearElemento(1, 1, 1, 1, btnC);
+		alinearElemento(2, 1, 1, 1, btnBorrar);
+		alinearElemento(3, 1, 1, 1, btnDiv);
 		
 		
 		// --------------------------------------------------
