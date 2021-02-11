@@ -1,9 +1,13 @@
 import java.awt.*;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 
 public class Calculadora extends JFrame{
 
+	JButton btnSuma = new JButton();
+	JButton btnResta = new JButton();
+	JButton btnMult = new JButton();
+	JButton btnDiv = new JButton();
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
 
