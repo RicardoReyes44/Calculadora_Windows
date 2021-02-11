@@ -76,6 +76,11 @@ public class Calculadora extends JFrame{
 		alinearElemento(2, 3, 1, 1, btnSeis);
 		alinearElemento(3, 3, 1, 1, btnResta);
 		
+		alinearElemento(0, 4, 1, 1, btnUno);
+		alinearElemento(1, 4, 1, 1, btnDos);
+		alinearElemento(2, 4, 1, 1, btnTres);
+		alinearElemento(3, 4, 1, 1, btnSuma);
+		
 		// --------------------------------------------------
 		
 		pack();
@@ -83,7 +88,7 @@ public class Calculadora extends JFrame{
 		
 	}
 
-	"Se configuraron los botones 'btnCinco', 'btnSeis', 'btnCuatro' y 'btnResta' en la clase 'Calculadora'"
+	"Se configuraron los botones 'btnUno', 'btnTres', 'btnDos' y 'btnSuma' en la clase 'Calculadora'"
 
 
 	// -------------------------------------------------
