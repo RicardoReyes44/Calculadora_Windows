@@ -10,6 +10,9 @@ public class Calculadora extends JFrame implements ActionListener{
 	//                     Widgets
 	// -------------------------------------------------
 	
+	GridBagLayout gbl = new GridBagLayout();
+	GridBagConstraints gbc = new GridBagConstraints();
+	
 	Font fuente = new Font("Calibri", 1, 20);
 	JTextField txtCaja = new JTextField("0");
 	
@@ -40,12 +43,6 @@ public class Calculadora extends JFrame implements ActionListener{
 	JButton btnCinco = new JButton("5");
 	JButton btnDos = new JButton("2");
 	JButton btnCero = new JButton("0");
-	
-	GridBagLayout gbl = new GridBagLayout();
-	GridBagConstraints gbc = new GridBagConstraints();
-
-
-
 
 	// -------------------------------------------------
 	//                    Constructor
@@ -97,32 +94,38 @@ public class Calculadora extends JFrame implements ActionListener{
 		alinearElemento(2, 6, 1, 1, btnPunto);
 		alinearElemento(3, 6, 1, 1, btnIgual);
 		
+		// Agregando oyentes al componente
+		
+		btnPorcentaje.addActionListener(this);
+		btnRaiz.addActionListener(this);
+		btnCuadrado.addActionListener(this);
+		btnUnoSobreX.addActionListener(this);
+		btnCE.addActionListener(this);
+		btnC.addActionListener(this);
+		btnBorrar.addActionListener(this);
+		btnDiv.addActionListener(this);
+		btnSiete.addActionListener(this);
+		btnOcho.addActionListener(this);
+		btnNueve.addActionListener(this);
+		btnMult.addActionListener(this);
+		btnCuatro.addActionListener(this);
+		btnCinco.addActionListener(this);
+		btnSeis.addActionListener(this);
+		btnResta.addActionListener(this);
+		btnUno.addActionListener(this);
+		btnDos.addActionListener(this);
+		btnTres.addActionListener(this);
+		btnSuma.addActionListener(this);
+		btnMasMenos.addActionListener(this);
+		btnCero.addActionListener(this);
+		btnIgual.addActionListener(this);
+		
 		// --------------------------------------------------
 		
 		pack();
 		setLocationRelativeTo(null);
 		
 	}
-
-	
-
-
-	// -------------------------------------------------
-	//                    Metodos
-	// -------------------------------------------------
-	
-	public void alinearElemento(int x, int y, int height, int width, Component componente) {
-		
-		gbc.gridx = x;
-		gbc.gridy = y;
-		gbc.gridheight = height;
-		gbc.gridwidth = width;
-		
-		gbl.setConstraints(componente, gbc);
-		add(componente);
-		
-	}
-
 
 
 
@@ -132,12 +135,32 @@ public class Calculadora extends JFrame implements ActionListener{
 	// -------------------------------------------------
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent evento) {
 		
-		if(e.getSource()==btnSuma) {
-			System.out.println("SUMA");
+		if(evento.getSource()==btnSuma) {
+			System.out.println("ASD");
 		}
-		
+
 	}
+
+
+
+
+	// -------------------------------------------------
+	//                    Metodos
+	// -------------------------------------------------
+		
+	public void alinearElemento(int x, int y, int height, int width, Component componente) {
+			
+		gbc.gridx = x;
+		gbc.gridy = y;
+		gbc.gridheight = height;
+		gbc.gridwidth = width;
+			
+		gbl.setConstraints(componente, gbc);
+		add(componente);
+			
+	}
+
 
 }
