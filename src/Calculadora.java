@@ -15,7 +15,7 @@ public class Calculadora extends JFrame{
 	JButton btnUnoSobreX = new JButton("1/x");
 	JButton btnIgual = new JButton("=");
 
-	JButton btnBorrar = new JButton("<-");
+	JButton btnBorrar = new JButton("<=");
 	JButton btnCuadrado = new JButton("x²");
 	JButton btnNueve = new JButton("9");
 	JButton btnSeis = new JButton("6");
@@ -24,7 +24,7 @@ public class Calculadora extends JFrame{
 
 	JButton btnUno = new JButton("1");
 	JButton btnCuatro = new JButton("4");
-	JButton btnSiete = new JButton("5");
+	JButton btnSiete = new JButton("7");
 	JButton btnCE = new JButton("CE");
 	JButton btnPorcentaje = new JButton("%");
 	JButton btnMasMenos = new JButton("+-");
@@ -47,6 +47,7 @@ public class Calculadora extends JFrame{
 	// -------------------------------------------------
 
 	public Calculadora(){
+
 		getContentPane().setLayout(gbl);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Calculadora");
@@ -65,6 +66,15 @@ public class Calculadora extends JFrame{
 		alinearElemento(2, 1, 1, 1, btnBorrar);
 		alinearElemento(3, 1, 1, 1, btnDiv);
 		
+		alinearElemento(0, 2, 1, 1, btnSiete);
+		alinearElemento(1, 2, 1, 1, btnOcho);
+		alinearElemento(2, 2, 1, 1, btnNueve);
+		alinearElemento(3, 2, 1, 1, btnMult);
+		
+		/*alinearElemento(0, 3, 1, 1, btnCE);
+		alinearElemento(1, 3, 1, 1, btnC);
+		alinearElemento(2, 3, 1, 1, btnBorrar);
+		alinearElemento(3, 3, 1, 1, btnDiv);*/
 		
 		// --------------------------------------------------
 		
