@@ -8,6 +8,8 @@ public class Calculadora extends JFrame{
 	//                     Widgets
 	// -------------------------------------------------
 	
+	JTextField txtCaja = new JTextField("0");
+	
 	JButton btnSuma = new JButton("+");
 	JButton btnResta = new JButton("-");
 	JButton btnMult = new JButton("x");
@@ -56,25 +58,25 @@ public class Calculadora extends JFrame{
 
 		// --------------------------------------------------
 		
-		alinearElemento(0, 0, 1, 1, btnPorcentaje);
-		alinearElemento(1, 0, 1, 1, btnRaiz);
-		alinearElemento(2, 0, 1, 1, btnCuadrado);
-		alinearElemento(3, 0, 1, 1, btnUnoSobreX);
+		alinearElemento(0, 1, 1, 1, btnPorcentaje);
+		alinearElemento(1, 1, 1, 1, btnRaiz);
+		alinearElemento(2, 1, 1, 1, btnCuadrado);
+		alinearElemento(3, 1, 1, 1, btnUnoSobreX);
 		
-		alinearElemento(0, 1, 1, 1, btnCE);
-		alinearElemento(1, 1, 1, 1, btnC);
-		alinearElemento(2, 1, 1, 1, btnBorrar);
-		alinearElemento(3, 1, 1, 1, btnDiv);
+		alinearElemento(0, 2, 1, 1, btnCE);
+		alinearElemento(1, 2, 1, 1, btnC);
+		alinearElemento(2, 2, 1, 1, btnBorrar);
+		alinearElemento(3, 2, 1, 1, btnDiv);
 		
-		alinearElemento(0, 2, 1, 1, btnSiete);
-		alinearElemento(1, 2, 1, 1, btnOcho);
-		alinearElemento(2, 2, 1, 1, btnNueve);
-		alinearElemento(3, 2, 1, 1, btnMult);
+		alinearElemento(0, 3, 1, 1, btnSiete);
+		alinearElemento(1, 3, 1, 1, btnOcho);
+		alinearElemento(2, 3, 1, 1, btnNueve);
+		alinearElemento(3, 3, 1, 1, btnMult);
 		
-		alinearElemento(0, 3, 1, 1, btnCuatro);
-		alinearElemento(1, 3, 1, 1, btnCinco);
-		alinearElemento(2, 3, 1, 1, btnSeis);
-		alinearElemento(3, 3, 1, 1, btnResta);
+		alinearElemento(0, 4, 1, 1, btnCuatro);
+		alinearElemento(1, 4, 1, 1, btnCinco);
+		alinearElemento(2, 4, 1, 1, btnSeis);
+		alinearElemento(3, 4, 1, 1, btnResta);
 		
 		alinearElemento(0, 4, 1, 1, btnUno);
 		alinearElemento(1, 4, 1, 1, btnDos);
