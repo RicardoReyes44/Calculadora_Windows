@@ -41,8 +41,18 @@ public class Calculadora extends JFrame{
 		setTitle("Calculadora");
 		setVisible(true);
 		
+		// --------------------------------------------------
+		
+        
+		
+		// --------------------------------------------------
+		
 		pack();
 		setLocationRelativeTo(null);
+		
+	}
+	
+	public void alinearElemento(int x, int y, int height, int width, Component componente) {
 		
 	}
 
