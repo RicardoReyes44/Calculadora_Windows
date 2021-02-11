@@ -8,9 +8,11 @@ public class Calculadora extends JFrame{
 	JButton btnResta = new JButton();
 	JButton btnMult = new JButton();
 	JButton btnDiv = new JButton();
+	JButton btnUnoSobreX = new JButton();
 	JButton btnIgual = new JButton();
 
 	JButton btnBorrar = new JButton();
+	JButton btnCuadrado = new JButton();
 	JButton btnNueve = new JButton();
 	JButton btnSeis = new JButton();
 	JButton btnTres = new JButton();
@@ -20,10 +22,12 @@ public class Calculadora extends JFrame{
 	JButton btnCuatro = new JButton();
 	JButton btnSiete = new JButton();
 	JButton btnCE = new JButton();
+	JButton btnPorcentaje = new JButton();
 	JButton btnMasMenos = new JButton();
 
 	JButton btnOcho = new JButton();
 	JButton btnC = new JButton();
+	JButton btnRaiz = new JButton();
 	JButton btnCinco = new JButton();
 	JButton btnDos = new JButton();
 	JButton btnCero = new JButton();
