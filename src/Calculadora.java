@@ -4,6 +4,10 @@ import javax.swing.*;
 
 public class Calculadora extends JFrame{
 
+	// -------------------------------------------------
+	//                     Widgets
+	// -------------------------------------------------
+	
 	JButton btnSuma = new JButton("+");
 	JButton btnResta = new JButton("-");
 	JButton btnMult = new JButton("x");
@@ -35,6 +39,13 @@ public class Calculadora extends JFrame{
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
 
+
+
+
+	// -------------------------------------------------
+	//                    Constructor
+	// -------------------------------------------------
+
 	public Calculadora(){
 		getContentPane().setLayout(gbl);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,9 +54,11 @@ public class Calculadora extends JFrame{
 
 		// --------------------------------------------------
 		
-        alinearElemento(0, 0, 80, 100, btnSuma);
-        alinearElemento(1, 0, 0, 100, new Label(""));
-        alinearElemento(2, 0, 80, 100, btnResta);
+		alinearElemento(0, 0, 1, 1, btnPorcentaje);
+		alinearElemento(1, 0, 1, 1, btnRaiz);
+		alinearElemento(2, 0, 1, 1, btnCuadrado);
+		alinearElemento(3, 0, 1, 1, btnUnoSobreX);
+		
 		
 		// --------------------------------------------------
 		
@@ -53,17 +66,31 @@ public class Calculadora extends JFrame{
 		setLocationRelativeTo(null);
 		
 	}
+
+
+
+
+	// -------------------------------------------------
+	//                    Metodos
+	// -------------------------------------------------
 	
 	public void alinearElemento(int x, int y, int height, int width, Component componente) {
 		
 		gbc.gridx = x;
 		gbc.gridy = y;
 		gbc.gridheight = height;
-		gbc.gridheight = height;
+		gbc.gridwidth = width;
 		
 		gbl.setConstraints(componente, gbc);
 		add(componente);
 		
 	}
+
+
+
+
+	// -------------------------------------------------
+	//                    Eventos
+	// -------------------------------------------------
 
 }
