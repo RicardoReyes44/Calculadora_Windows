@@ -55,37 +55,14 @@ public class Calculadora extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Calculadora");
 		setVisible(true);
-		gbc.ipadx = 20;
-		gbc.ipady = 12;
+		gbc.ipadx = 50;
+		gbc.ipady = 27;
 		gbc.fill = GridBagConstraints.BOTH;
 		setResizable(false);
 		
 		txtCaja.setFont(fuente2);
+		txtCaja.setBorder(null);
 		txtCaja.setHorizontalAlignment(JTextField.RIGHT);
-		
-		btnPorcentaje.setFont(fuente);
-		btnRaiz.setFont(fuente);
-		btnCuadrado.setFont(fuente);
-		btnUnoSobreX.setFont(fuente);
-		btnCE.setFont(fuente);
-		btnC.setFont(fuente);
-		btnBorrar.setFont(fuente);
-		btnDiv.setFont(fuente);
-		btnSiete.setFont(fuente);
-		btnOcho.setFont(fuente);
-		btnNueve.setFont(fuente);
-		btnMult.setFont(fuente);
-		btnCuatro.setFont(fuente);
-		btnCinco.setFont(fuente);
-		btnSeis.setFont(fuente);
-		btnResta.setFont(fuente);
-		btnUno.setFont(fuente);
-		btnDos.setFont(fuente);
-		btnTres.setFont(fuente);
-		btnSuma.setFont(fuente);
-		btnMasMenos.setFont(fuente);
-		btnCero.setFont(fuente);
-		btnIgual.setFont(fuente);
 
 		// --------------------------------------------------
 		
@@ -146,6 +123,85 @@ public class Calculadora extends JFrame implements ActionListener{
 		btnMasMenos.addActionListener(this);
 		btnCero.addActionListener(this);
 		btnIgual.addActionListener(this);
+		btnPunto.addActionListener(this);
+		
+		// Estableciendo estilos
+		
+		txtCaja.setBackground(new Color(244, 246, 246));
+		btnPorcentaje.setBackground(new Color(213, 216, 220));
+		btnRaiz.setBackground(new Color(213, 216, 220));
+		btnCuadrado.setBackground(new Color(213, 216, 220));
+		btnUnoSobreX.setBackground(new Color(213, 216, 220));
+		btnCE.setBackground(new Color(213, 216, 220));
+		btnC.setBackground(new Color(213, 216, 220));
+		btnBorrar.setBackground(new Color(213, 216, 220));
+		btnDiv.setBackground(new Color(213, 216, 220));
+		btnSiete.setBackground(new Color(213, 216, 220));
+		btnOcho.setBackground(new Color(213, 216, 220));
+		btnNueve.setBackground(new Color(213, 216, 220));
+		btnMult.setBackground(new Color(213, 216, 220));
+		btnCuatro.setBackground(new Color(213, 216, 220));
+		btnCinco.setBackground(new Color(213, 216, 220));
+		btnSeis.setBackground(new Color(213, 216, 220));
+		btnResta.setBackground(new Color(213, 216, 220));
+		btnUno.setBackground(new Color(213, 216, 220));
+		btnDos.setBackground(new Color(213, 216, 220));
+		btnTres.setBackground(new Color(213, 216, 220));
+		btnSuma.setBackground(new Color(213, 216, 220));
+		btnMasMenos.setBackground(new Color(213, 216, 220));
+		btnCero.setBackground(new Color(213, 216, 220));
+		btnIgual.setBackground(new Color(213, 216, 220));
+		btnPunto.setBackground(new Color(213, 216, 220));
+		
+		btnPorcentaje.setBorder(null);
+		btnRaiz.setBorder(null);
+		btnCuadrado.setBorder(null);
+		btnUnoSobreX.setBorder(null);
+		btnCE.setBorder(null);
+		btnC.setBorder(null);
+		btnBorrar.setBorder(null);
+		btnDiv.setBorder(null);
+		btnSiete.setBorder(null);
+		btnOcho.setBorder(null);
+		btnNueve.setBorder(null);
+		btnMult.setBorder(null);
+		btnCuatro.setBorder(null);
+		btnCinco.setBorder(null);
+		btnSeis.setBorder(null);
+		btnResta.setBorder(null);
+		btnUno.setBorder(null);
+		btnDos.setBorder(null);
+		btnTres.setBorder(null);
+		btnSuma.setBorder(null);
+		btnMasMenos.setBorder(null);
+		btnCero.setBorder(null);
+		btnIgual.setBorder(null);
+		btnPunto.setBorder(null);
+		
+		btnPorcentaje.setFont(fuente);
+		btnRaiz.setFont(fuente);
+		btnCuadrado.setFont(fuente);
+		btnUnoSobreX.setFont(fuente);
+		btnCE.setFont(fuente);
+		btnC.setFont(fuente);
+		btnBorrar.setFont(fuente);
+		btnDiv.setFont(fuente);
+		btnSiete.setFont(fuente);
+		btnOcho.setFont(fuente);
+		btnNueve.setFont(fuente);
+		btnMult.setFont(fuente);
+		btnCuatro.setFont(fuente);
+		btnCinco.setFont(fuente);
+		btnSeis.setFont(fuente);
+		btnResta.setFont(fuente);
+		btnUno.setFont(fuente);
+		btnDos.setFont(fuente);
+		btnTres.setFont(fuente);
+		btnSuma.setFont(fuente);
+		btnMasMenos.setFont(fuente);
+		btnCero.setFont(fuente);
+		btnIgual.setFont(fuente);
+		btnPunto.setFont(fuente);
 		
 		// --------------------------------------------------
 		
