@@ -14,6 +14,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	GridBagConstraints gbc = new GridBagConstraints();
 	
 	Font fuente = new Font("Calibri", 1, 20);
+	Font fuente2 = new Font("Calibri", 1, 50);
 	JTextField txtCaja = new JTextField("0");
 	
 	JButton btnSuma = new JButton("+");
@@ -54,11 +55,37 @@ public class Calculadora extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Calculadora");
 		setVisible(true);
+		gbc.ipadx = 20;
+		gbc.ipady = 12;
 		gbc.fill = GridBagConstraints.BOTH;
 		setResizable(false);
 		
-		txtCaja.setFont(fuente);
+		txtCaja.setFont(fuente2);
 		txtCaja.setHorizontalAlignment(JTextField.RIGHT);
+		
+		btnPorcentaje.setFont(fuente);
+		btnRaiz.setFont(fuente);
+		btnCuadrado.setFont(fuente);
+		btnUnoSobreX.setFont(fuente);
+		btnCE.setFont(fuente);
+		btnC.setFont(fuente);
+		btnBorrar.setFont(fuente);
+		btnDiv.setFont(fuente);
+		btnSiete.setFont(fuente);
+		btnOcho.setFont(fuente);
+		btnNueve.setFont(fuente);
+		btnMult.setFont(fuente);
+		btnCuatro.setFont(fuente);
+		btnCinco.setFont(fuente);
+		btnSeis.setFont(fuente);
+		btnResta.setFont(fuente);
+		btnUno.setFont(fuente);
+		btnDos.setFont(fuente);
+		btnTres.setFont(fuente);
+		btnSuma.setFont(fuente);
+		btnMasMenos.setFont(fuente);
+		btnCero.setFont(fuente);
+		btnIgual.setFont(fuente);
 
 		// --------------------------------------------------
 		
