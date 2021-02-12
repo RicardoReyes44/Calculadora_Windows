@@ -55,7 +55,7 @@ public class Calculadora extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Calculadora");
 		setVisible(true);
-		gbc.ipadx = 50;
+		gbc.ipadx = 55;
 		gbc.ipady = 27;
 		gbc.fill = GridBagConstraints.BOTH;
 		setResizable(false);
