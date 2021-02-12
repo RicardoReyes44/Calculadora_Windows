@@ -263,30 +263,11 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		}else if(eventoObtenido==btnPunto) {
 			
-			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")){
-				
-				buscador = patron.matcher(textoObtenido);
-
-				if(!buscador.find()) {
-					if(textoObtenido.equals("0")) {
-						concatencionPersonalizada(txtCaja.getText()+".");
-					}else {
-						concatencionPersonalizada(".");
-					}
-				}
-			}
+			colocarPunto(textoObtenido);
 			
 		}else if(eventoObtenido==btnBorrar) {
 
-			if(!textoObtenido.equals("0")) {
-				if(resultado.length()!=1) {
-					resultado.deleteCharAt(resultado.length()-1);
-					txtCaja.setText(resultado.toString());
-				}else {
-					limpiarResultado();
-					txtCaja.setText("0");
-				}
-			}
+            borrar(textoObtenido);			
 
 		}else if(eventoObtenido==btnC) {
 			
@@ -343,6 +324,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 	}
 	
+
 	public void concatencionPersonalizada(String cadena) {
 		
 		resultado.append(cadena);
@@ -350,8 +332,42 @@ public class Calculadora extends JFrame implements ActionListener{
 		
 	}
 
+
 	public void limpiarResultado() {
 		resultado = new StringBuilder();
 	}
 
+
+	public void borrar(String textoObtenido) {
+
+		if(!textoObtenido.equals("0")) {
+			if(resultado.length()!=1) {
+				resultado.deleteCharAt(resultado.length()-1);
+				txtCaja.setText(resultado.toString());
+			}else {
+				limpiarResultado();
+				txtCaja.setText("0");
+			}
+		}
+
+	}
+
+
+	public void colocarPunto(String textoObtenido) {
+		
+		if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")){
+			
+			buscador = patron.matcher(textoObtenido);
+
+			if(!buscador.find()) {
+				if(textoObtenido.equals("0")) {
+					concatencionPersonalizada(txtCaja.getText()+".");
+				}else {
+					concatencionPersonalizada(".");
+				}
+			}
+		}
+		
+	}
+	
 }
