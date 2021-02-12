@@ -229,6 +229,66 @@ public class Calculadora extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 		
+		String textoObtenido;
+		Object eventoObtenido = evento.getSource();
+
+
+		if(txtCaja.getText().equals("Error X.x")) {
+			txtCaja.setText("0");
+		}
+		
+
+		textoObtenido = txtCaja.getText();
+
+
+		if(eventoObtenido==btnCero) {
+	        
+			if(!textoObtenido.equals("0")){
+			    concatencionPersonalizada("0");
+			}
+
+		}else if(eventoObtenido==btnUnoSobreX) {
+
+			if(!textoObtenido.equals("0")){
+				// pendiente
+			}else {
+			    txtCaja.setText("Error X.x");
+			}
+
+		}if(eventoObtenido==btnBorrar) {
+			
+			if(!textoObtenido.equals("0")){
+				if(txtCaja.getText().length()==1) {
+					txtCaja.setText("0");
+					limpiarResultado();
+				}else {
+					txtCaja.setText(txtCaja.getText().substring(0, txtCaja.getText().length()-1));
+				}
+			}
+			
+		}else{
+			
+			if(eventoObtenido==btnUno) {
+				concatencionPersonalizada("1");
+			}else if(eventoObtenido==btnDos) {
+				concatencionPersonalizada("2");
+			}else if(eventoObtenido==btnTres) {
+				concatencionPersonalizada("3");
+			}else if(eventoObtenido==btnCuatro) {
+				concatencionPersonalizada("4");
+			}else if(eventoObtenido==btnCinco) {
+				concatencionPersonalizada("5");
+			}else if(eventoObtenido==btnSeis) {
+				concatencionPersonalizada("6");
+			}else if(eventoObtenido==btnSiete) {
+				concatencionPersonalizada("7");
+			}else if(eventoObtenido==btnOcho) {
+				concatencionPersonalizada("8");
+			}else if(eventoObtenido==btnNueve) {
+				concatencionPersonalizada("9");
+			}
+
+		}
 		
 	}
 
