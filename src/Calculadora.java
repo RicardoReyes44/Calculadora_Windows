@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.swing.*;
 
 
@@ -12,6 +15,9 @@ public class Calculadora extends JFrame implements ActionListener{
 	
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
+
+	ScriptEngine escaner = new ScriptEngineManager().getEngineByName("js");
+	StringBuilder resultado = new StringBuilder();
 	
 	Font fuente = new Font("Calibri", 1, 20);
 	Font fuente2 = new Font("Calibri", 1, 50);
@@ -44,6 +50,9 @@ public class Calculadora extends JFrame implements ActionListener{
 	JButton btnCinco = new JButton("5");
 	JButton btnDos = new JButton("2");
 	JButton btnCero = new JButton("0");
+
+
+
 
 	// -------------------------------------------------
 	//                    Constructor
@@ -221,7 +230,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent evento) {
 		
 		if(evento.getSource()==btnSuma) {
-			System.out.println("ASD");
+
 		}
 
 	}
