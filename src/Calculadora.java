@@ -229,10 +229,8 @@ public class Calculadora extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 		
-		if(evento.getSource()==btnSuma) {
-
-		}
-
+       
+			
 	}
 
 
@@ -252,6 +250,17 @@ public class Calculadora extends JFrame implements ActionListener{
 		gbl.setConstraints(componente, gbc);
 		add(componente);
 			
+	}
+	
+	public void concatencionPersonalizada(char dato) {
+		
+		String textoObtenido = txtCaja.getText();
+		
+		if(!textoObtenido.equals("0")){
+    	    resultado.append("1");
+     	    txtCaja.setText(resultado.toString());
+		}
+
 	}
 
 
