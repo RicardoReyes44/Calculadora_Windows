@@ -258,27 +258,22 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		}else if(eventoObtenido==btnPunto) {
 			
-			concatencionPersonalizada(txtCaja.getText()+".");
+			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")) {
+				concatencionPersonalizada(".");
+			}
 			
 		}else if(eventoObtenido==btnBorrar) {
 			
-			if(!textoObtenido.equals("0")){
-				if(txtCaja.getText().length()==1) {
-					txtCaja.setText("0");
-					limpiarResultado();
-				}else {
-					txtCaja.setText(txtCaja.getText().substring(0, txtCaja.getText().length()-1));
-				}
-			}
+			//pendiente
 			
 		}else if(eventoObtenido==btnC) {
 			
-			resultado = new StringBuilder();
+			limpiarResultado();
 			txtCaja.setText("0");
 			
 		}else if(eventoObtenido==btnCE) {
 			//pendiente
-			resultado = new StringBuilder();
+			limpiarResultado();
 			txtCaja.setText("0");
 			
 		}else{
