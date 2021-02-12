@@ -256,7 +256,11 @@ public class Calculadora extends JFrame implements ActionListener{
 			    txtCaja.setText("Error X.x");
 			}
 
-		}if(eventoObtenido==btnBorrar) {
+		}else if(eventoObtenido==btnPunto) {
+			
+			concatencionPersonalizada(txtCaja.getText()+".");
+			
+		}else if(eventoObtenido==btnBorrar) {
 			
 			if(!textoObtenido.equals("0")){
 				if(txtCaja.getText().length()==1) {
@@ -267,13 +271,13 @@ public class Calculadora extends JFrame implements ActionListener{
 				}
 			}
 			
-		}if(eventoObtenido==btnC) {
+		}else if(eventoObtenido==btnC) {
 			
 			resultado = new StringBuilder();
 			txtCaja.setText("0");
 			
-		}if(eventoObtenido==btnCE) {
-			
+		}else if(eventoObtenido==btnCE) {
+			//pendiente
 			resultado = new StringBuilder();
 			txtCaja.setText("0");
 			
