@@ -72,6 +72,7 @@ public class Calculadora extends JFrame implements ActionListener{
 		txtCaja.setFont(fuente2);
 		txtCaja.setBorder(null);
 		txtCaja.setHorizontalAlignment(JTextField.RIGHT);
+		txtCaja.setEditable(false);
 
 		// --------------------------------------------------
 		
