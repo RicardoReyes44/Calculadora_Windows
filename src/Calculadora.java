@@ -277,7 +277,7 @@ public class Calculadora extends JFrame implements ActionListener{
 					txtCaja.setText("0");
 				}
 			}
-			
+
 		}else if(eventoObtenido==btnC) {
 			
 			limpiarResultado();
