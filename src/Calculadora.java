@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -15,7 +17,10 @@ public class Calculadora extends JFrame implements ActionListener{
 	
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
-
+	
+	Pattern patron = Pattern.compile("(.)");
+	Matcher buscador;
+	
 	ScriptEngine escaner = new ScriptEngineManager().getEngineByName("js");
 	StringBuilder resultado = new StringBuilder();
 	
@@ -261,6 +266,8 @@ public class Calculadora extends JFrame implements ActionListener{
 			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")) {
 				if(textoObtenido.equals("0")) {
 					concatencionPersonalizada(txtCaja.getText()+".");
+				}else if(){
+					
 				}else {
 					concatencionPersonalizada(".");
 				}
