@@ -267,8 +267,16 @@ public class Calculadora extends JFrame implements ActionListener{
 			}
 			
 		}else if(eventoObtenido==btnBorrar) {
-			
-			//pendiente
+
+			if(!textoObtenido.equals("0")) {
+				if(resultado.length()!=1) {
+					resultado.deleteCharAt(resultado.length()-1);
+					txtCaja.setText(resultado.toString());
+				}else {
+					limpiarResultado();
+					txtCaja.setText("0");
+				}
+			}
 			
 		}else if(eventoObtenido==btnC) {
 			
