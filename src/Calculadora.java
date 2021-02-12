@@ -18,7 +18,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	GridBagLayout gbl = new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
 	
-	Pattern patron = Pattern.compile("(.)");
+	Pattern patron = Pattern.compile("\\.");
 	Matcher buscador;
 	
 	ScriptEngine escaner = new ScriptEngineManager().getEngineByName("js");
@@ -263,13 +263,16 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		}else if(eventoObtenido==btnPunto) {
 			
-			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")) {
-				if(textoObtenido.equals("0")) {
-					concatencionPersonalizada(txtCaja.getText()+".");
-				}else if(){
-					
-				}else {
-					concatencionPersonalizada(".");
+			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")){
+				
+				buscador = patron.matcher(textoObtenido);
+
+				if(!buscador.find()) {
+					if(textoObtenido.equals("0")) {
+						concatencionPersonalizada(txtCaja.getText()+".");
+					}else {
+						concatencionPersonalizada(".");
+					}
 				}
 			}
 			
