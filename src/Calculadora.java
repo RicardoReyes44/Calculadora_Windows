@@ -229,8 +229,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 		
-       
-			
+		
 	}
 
 
@@ -252,16 +251,15 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 	}
 	
-	public void concatencionPersonalizada(char dato) {
+	public void concatencionPersonalizada(String cadena) {
 		
-		String textoObtenido = txtCaja.getText();
+		resultado.append(cadena);
+		txtCaja.setText(resultado.toString());
 		
-		if(!textoObtenido.equals("0")){
-    	    resultado.append("1");
-     	    txtCaja.setText(resultado.toString());
-		}
-
 	}
 
+	public void limpiarResultado() {
+		resultado = new StringBuilder();
+	}
 
 }
