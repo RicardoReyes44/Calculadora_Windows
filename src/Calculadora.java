@@ -259,7 +259,11 @@ public class Calculadora extends JFrame implements ActionListener{
 		}else if(eventoObtenido==btnPunto) {
 			
 			if(!textoObtenido.substring(textoObtenido.length()-1).equals(".")) {
-				concatencionPersonalizada(".");
+				if(textoObtenido.equals("0")) {
+					concatencionPersonalizada(txtCaja.getText()+".");
+				}else {
+					concatencionPersonalizada(".");
+				}
 			}
 			
 		}else if(eventoObtenido==btnBorrar) {
