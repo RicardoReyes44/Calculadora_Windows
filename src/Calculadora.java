@@ -279,6 +279,18 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 			concatenacionOperacional("+");
 			
+		}else if(eventoObtenido==btnResta) {
+			
+			concatenacionOperacional("-");
+			
+		}else if(eventoObtenido==btnMult) {
+			
+			concatenacionOperacional("x");
+			
+		}else if(eventoObtenido==btnDiv) {
+			
+			concatenacionOperacional("/");
+			
 		}else if(eventoObtenido==btnMasMenos) {
 
 			cambiarSigno(textoObtenido);
@@ -336,13 +348,6 @@ public class Calculadora extends JFrame implements ActionListener{
 		
 	}
 
-
-    public void concatenacionOperacional() {
-    	
-    	
-     	
-	}
-
     
     public void verificarOperador(String cadena) {
 		
@@ -350,28 +355,43 @@ public class Calculadora extends JFrame implements ActionListener{
      	
      	case "Suma":
      		
-     		
+     		concatenacionOperacional("+");
      		
      		break;
 
      		
      	case "Resta":
+     		
+     		concatenacionOperacional("-");
+     		
      		break;
 
      		
      	case "Multiplicacion":
+     		
+     		concatenacionOperacional("*");
+     		
      		break;
 
      		
      	case "Division":
+     		
+     		concatenacionOperacional("/");
+     		
      		break;
      	
      		
      	case "Raiz":
+     		
+     		concatenacionOperacional("√");
+     		
      		break;
      	
    
      	case "Cuadrado":
+     		
+     		concatenacionOperacional("^2");
+     		
      		break;
 
  
@@ -383,11 +403,24 @@ public class Calculadora extends JFrame implements ActionListener{
 
      		
      	case "Igual":
+     		
+     		
+     		
      		break;
      	
      	}
     	
 	}
+    
+    
+    public void concatenacionOperacional(String cadena) {
+    	
+    	resultado+=cadena;
+    	txtCaja.setText("0");
+    	
+    	System.out.println(resultado);
+     	
+   	}
     
 
 	public void limpiarResultado() {
