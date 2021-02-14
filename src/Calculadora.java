@@ -250,12 +250,12 @@ public class Calculadora extends JFrame implements ActionListener{
 		if(eventoObtenido==btnCero) {
 	        
 			if(!textoObtenido.equals("0")){
-			    concatenacionPersonalizada("0");
+			    concatenacionPersonalizada("0", textoObtenido);
 			}
 
 		}else if(eventoObtenido==btnUnoSobreX) {
 
-			concatenacionOperacional("UnoSobreX");
+			concatenacionOperacional("UnoSobreX", textoObtenido);
 
 		}else if(eventoObtenido==btnPunto) {
 			
@@ -277,19 +277,19 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 		}else if(eventoObtenido==btnSuma) {
 			
-			concatenacionOperacional("+");
+			concatenacionOperacional("+", textoObtenido);
 			
 		}else if(eventoObtenido==btnResta) {
 			
-			concatenacionOperacional("-");
+			concatenacionOperacional("-", textoObtenido);
 			
 		}else if(eventoObtenido==btnMult) {
 			
-			concatenacionOperacional("x");
+			concatenacionOperacional("x", textoObtenido);
 			
 		}else if(eventoObtenido==btnDiv) {
 			
-			concatenacionOperacional("/");
+			concatenacionOperacional("/", textoObtenido);
 			
 		}else if(eventoObtenido==btnMasMenos) {
 
@@ -298,27 +298,27 @@ public class Calculadora extends JFrame implements ActionListener{
 		}else{
 			
 			if(eventoObtenido==btnUno) {
-				concatenacionPersonalizada("1");
+				concatenacionPersonalizada("1", textoObtenido);
 			}else if(eventoObtenido==btnDos) {
-				concatenacionPersonalizada("2");
+				concatenacionPersonalizada("2", textoObtenido);
 			}else if(eventoObtenido==btnTres) {
-				concatenacionPersonalizada("3");
+				concatenacionPersonalizada("3", textoObtenido);
 			}else if(eventoObtenido==btnCuatro) {
-				concatenacionPersonalizada("4");
+				concatenacionPersonalizada("4", textoObtenido);
 			}else if(eventoObtenido==btnCinco) {
-				concatenacionPersonalizada("5");
+				concatenacionPersonalizada("5", textoObtenido);
 			}else if(eventoObtenido==btnSeis) {
-				concatenacionPersonalizada("6");
+				concatenacionPersonalizada("6", textoObtenido);
 			}else if(eventoObtenido==btnSiete) {
-				concatenacionPersonalizada("7");
+				concatenacionPersonalizada("7", textoObtenido);
 			}else if(eventoObtenido==btnOcho) {
-				concatenacionPersonalizada("8");
+				concatenacionPersonalizada("8", textoObtenido);
 			}else if(eventoObtenido==btnNueve) {
-				concatenacionPersonalizada("9");
+				concatenacionPersonalizada("9", textoObtenido);
 			}
 
 		}
-		
+
 	}
 
 
@@ -341,56 +341,55 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 	
 
-	public void concatenacionPersonalizada(String cadena) {
+	public void concatenacionPersonalizada(String cadena, String textoObtenido) {
 		
-		resultado+=cadena;
-		txtCaja.setText(resultado.toString());
-		
+		txtCaja.setText((textoObtenido.equals("0") ? "" : textoObtenido)+cadena);
+
 	}
 
     
-    public void verificarOperador(String cadena) {
+    public void verificarOperador(String cadena, String textoObtenido) {
 		
         switch(cadena) {
      	
      	case "Suma":
      		
-     		concatenacionOperacional("+");
+     		concatenacionOperacional("+", textoObtenido);
      		
      		break;
 
      		
      	case "Resta":
      		
-     		concatenacionOperacional("-");
+     		concatenacionOperacional("-", textoObtenido);
      		
      		break;
 
      		
      	case "Multiplicacion":
      		
-     		concatenacionOperacional("*");
+     		concatenacionOperacional("*", textoObtenido);
      		
      		break;
 
      		
      	case "Division":
      		
-     		concatenacionOperacional("/");
+     		concatenacionOperacional("/", textoObtenido);
      		
      		break;
      	
      		
      	case "Raiz":
      		
-     		concatenacionOperacional("√");
+     		concatenacionOperacional("√", textoObtenido);
      		
      		break;
      	
    
      	case "Cuadrado":
      		
-     		concatenacionOperacional("^2");
+     		concatenacionOperacional("^2", textoObtenido);
      		
      		break;
 
@@ -413,13 +412,11 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
     
     
-    public void concatenacionOperacional(String cadena) {
-    	
-    	resultado+=cadena;
+    public void concatenacionOperacional(String cadena, String textoObtenido) {
+
+    	resultado+=textoObtenido+cadena;
     	txtCaja.setText("0");
-    	
-    	System.out.println(resultado);
-     	
+
    	}
     
 
@@ -439,8 +436,7 @@ public class Calculadora extends JFrame implements ActionListener{
 				limpiarResultado();
 				txtCaja.setText("0");
 			}else {
-				resultado = textoObtenido.substring(0, textoObtenido.length()-1);
-				txtCaja.setText(resultado);
+				txtCaja.setText(textoObtenido.substring(0, textoObtenido.length()-1));
 			}
 			
 
@@ -457,9 +453,9 @@ public class Calculadora extends JFrame implements ActionListener{
 
 			if(!buscador.find()) {
 				if(textoObtenido.equals("0")) {
-					concatenacionPersonalizada(txtCaja.getText()+".");
+					concatenacionPersonalizada(textoObtenido+".", textoObtenido);
 				}else {
-					concatenacionPersonalizada(".");
+					concatenacionPersonalizada(".", textoObtenido);
 				}
 			}
 		}
