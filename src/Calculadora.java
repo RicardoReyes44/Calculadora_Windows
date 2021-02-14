@@ -255,11 +255,7 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		}else if(eventoObtenido==btnUnoSobreX) {
 
-			if(!textoObtenido.equals("0")){
-				// pendiente
-			}else {
-			    txtCaja.setText("Error X.x");
-			}
+			concatenacionOperacional("UnoSobreX");
 
 		}else if(eventoObtenido==btnPunto) {
 			
@@ -348,31 +344,39 @@ public class Calculadora extends JFrame implements ActionListener{
      	case "Suma":
      		break;
 
+     		
      	case "Resta":
      		break;
 
+     		
      	case "Multiplicacion":
      		break;
 
+     		
      	case "Division":
      		break;
      	
+     		
      	case "Raiz":
      		break;
      	
+   
      	case "Cuadrado":
      		break;
-     	
+
+ 
      	case "UnoSobreX":
+     		
+    		
+     		
      		break;
-     	
+
+     		
      	case "Igual":
      		break;
      	
      	}
      	
- 		txtCaja.setText("");
-		
 	}
 
 
@@ -384,10 +388,11 @@ public class Calculadora extends JFrame implements ActionListener{
 	public void borrar(String textoObtenido) {
 		
 		if(!textoObtenido.equals("0")) {
-			
+
+
 			if(textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("-")
+				|| textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("0")
 				|| textoObtenido.length()==1){
-				System.out.println("A");
 				limpiarResultado();
 				txtCaja.setText("0");
 			}else {
@@ -395,6 +400,7 @@ public class Calculadora extends JFrame implements ActionListener{
 				txtCaja.setText(resultado);
 			}
 			
+
 		}
 
 	}
