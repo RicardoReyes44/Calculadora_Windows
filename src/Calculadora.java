@@ -335,7 +335,7 @@ public class Calculadora extends JFrame implements ActionListener{
 
 	public void concatenacionPersonalizada(String cadena) {
 		
-		resultado.append(cadena);
+		resultado+=cadena;
 		txtCaja.setText(resultado.toString());
 		
 	}
@@ -377,7 +377,7 @@ public class Calculadora extends JFrame implements ActionListener{
 
 
 	public void limpiarResultado() {
-		resultado = new StringBuilder();
+		resultado = "";
 	}
 
 
@@ -385,8 +385,8 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		if(!textoObtenido.equals("0")) {
 			if(resultado.length()!=1) {
-				resultado.deleteCharAt(resultado.length()-1);
-				txtCaja.setText(resultado.toString());
+				resultado = resultado.substring(0, resultado.length()-1);
+				txtCaja.setText(resultado);
 			}else {
 				limpiarResultado();
 				txtCaja.setText("0");
