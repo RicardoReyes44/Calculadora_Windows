@@ -281,7 +281,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 		}else if(eventoObtenido==btnSuma) {
 			
-			concatenacionPersonalizada("+");
+			concatenacionOperacional("+");
 			
 		}else if(eventoObtenido==btnMasMenos) {
 
@@ -417,9 +417,11 @@ public class Calculadora extends JFrame implements ActionListener{
 	public void cambiarSigno(String textoObtenido) {
 		
 		if(textoObtenido.substring(0, 1).equals("-")) {
-			
+			resultado = textoObtenido.replace("-", "");
+			txtCaja.setText(resultado);
 		}else {
-			
+			resultado = "-"+textoObtenido;
+			txtCaja.setText(resultado);
 		}
 		
 	}
