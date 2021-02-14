@@ -250,7 +250,7 @@ public class Calculadora extends JFrame implements ActionListener{
 		if(eventoObtenido==btnCero) {
 	        
 			if(!textoObtenido.equals("0")){
-			    concatencionPersonalizada("0");
+			    concatenacionPersonalizada("0");
 			}
 
 		}else if(eventoObtenido==btnUnoSobreX) {
@@ -283,26 +283,27 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 			
 			
+			
 		}else{
 			
 			if(eventoObtenido==btnUno) {
-				concatencionPersonalizada("1");
+				concatenacionPersonalizada("1");
 			}else if(eventoObtenido==btnDos) {
-				concatencionPersonalizada("2");
+				concatenacionPersonalizada("2");
 			}else if(eventoObtenido==btnTres) {
-				concatencionPersonalizada("3");
+				concatenacionPersonalizada("3");
 			}else if(eventoObtenido==btnCuatro) {
-				concatencionPersonalizada("4");
+				concatenacionPersonalizada("4");
 			}else if(eventoObtenido==btnCinco) {
-				concatencionPersonalizada("5");
+				concatenacionPersonalizada("5");
 			}else if(eventoObtenido==btnSeis) {
-				concatencionPersonalizada("6");
+				concatenacionPersonalizada("6");
 			}else if(eventoObtenido==btnSiete) {
-				concatencionPersonalizada("7");
+				concatenacionPersonalizada("7");
 			}else if(eventoObtenido==btnOcho) {
-				concatencionPersonalizada("8");
+				concatenacionPersonalizada("8");
 			}else if(eventoObtenido==btnNueve) {
-				concatencionPersonalizada("9");
+				concatenacionPersonalizada("9");
 			}
 
 		}
@@ -329,7 +330,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 	
 
-	public void concatencionPersonalizada(String cadena) {
+	public void concatenacionPersonalizada(String cadena) {
 		
 		resultado.append(cadena);
 		txtCaja.setText(resultado.toString());
