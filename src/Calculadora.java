@@ -279,6 +279,10 @@ public class Calculadora extends JFrame implements ActionListener{
 			limpiarResultado();
 			txtCaja.setText("0");
 			
+		}else if(eventoObtenido==btnSuma) {
+			
+			
+			
 		}else{
 			
 			if(eventoObtenido==btnUno) {
