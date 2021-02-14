@@ -349,7 +349,7 @@ public class Calculadora extends JFrame implements ActionListener{
 
     
     public void verificarOperador(String cadena, String textoObtenido) {
-		
+
         switch(cadena) {
      	
      	case "Suma":
