@@ -338,26 +338,36 @@ public class Calculadora extends JFrame implements ActionListener{
 
 
     public void concatenacionOperacional(String cadena) {
-		
-        switch(caracter) {
     	
-    	case 's':
-    		break;
+    	switch(cadena) {
+     	
+     	case "Suma":
+     		break;
 
-    	case '':
-    		break;
+     	case "Resta":
+     		break;
 
-    	case 'm':
-    		break;
+     	case "Multiplicacion":
+     		break;
 
-    	case 'd':
-    		break;
-    	
-    	case ''
-    	
-    	}
-    	
-		txtCaja.setText("");
+     	case "Division":
+     		break;
+     	
+     	case "Raiz":
+     		break;
+     	
+     	case "Cuadrado":
+     		break;
+     	
+     	case "UnoSobreX":
+     		break;
+     	
+     	case "Igual":
+     		break;
+     	
+     	}
+     	
+ 		txtCaja.setText("");
 		
 	}
 
