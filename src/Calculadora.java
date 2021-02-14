@@ -382,15 +382,19 @@ public class Calculadora extends JFrame implements ActionListener{
 
 
 	public void borrar(String textoObtenido) {
-
+		
 		if(!textoObtenido.equals("0")) {
-			if(resultado.length()!=1) {
-				resultado = resultado.substring(0, resultado.length()-1);
-				txtCaja.setText(resultado);
-			}else {
+			
+			if(textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("-")
+				|| textoObtenido.length()==1){
+				System.out.println("A");
 				limpiarResultado();
 				txtCaja.setText("0");
+			}else {
+				resultado = textoObtenido.substring(0, textoObtenido.length()-1);
+				txtCaja.setText(resultado);
 			}
+			
 		}
 
 	}
