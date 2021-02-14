@@ -281,8 +281,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 		}else if(eventoObtenido==btnSuma) {
 			
-			
-			
+			concatenacionPersonalizada("+");
 			
 		}else{
 			
@@ -338,6 +337,13 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 
 
+    public void concatenacionPersonalizada(char caracter) {
+		
+		
+		
+	}
+
+
 	public void limpiarResultado() {
 		resultado = new StringBuilder();
 	}
@@ -366,9 +372,9 @@ public class Calculadora extends JFrame implements ActionListener{
 
 			if(!buscador.find()) {
 				if(textoObtenido.equals("0")) {
-					concatencionPersonalizada(txtCaja.getText()+".");
+					concatenacionPersonalizada(txtCaja.getText()+".");
 				}else {
-					concatencionPersonalizada(".");
+					concatenacionPersonalizada(".");
 				}
 			}
 		}
