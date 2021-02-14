@@ -283,6 +283,10 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 			concatenacionPersonalizada("+");
 			
+		}else if(eventoObtenido==btnMasMenos) {
+
+			
+			
 		}else{
 			
 			if(eventoObtenido==btnUno) {
