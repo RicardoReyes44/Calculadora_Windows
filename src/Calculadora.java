@@ -337,11 +337,21 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 
 
-    public void concatenacionOperacional(String cadena) {
+    public void concatenacionOperacional() {
     	
-    	switch(cadena) {
+    	
+     	
+	}
+
+    
+    public void verificarOperador(String cadena) {
+		
+        switch(cadena) {
      	
      	case "Suma":
+     		
+     		
+     		
      		break;
 
      		
@@ -376,9 +386,9 @@ public class Calculadora extends JFrame implements ActionListener{
      		break;
      	
      	}
-     	
+    	
 	}
-
+    
 
 	public void limpiarResultado() {
 		resultado = "";
