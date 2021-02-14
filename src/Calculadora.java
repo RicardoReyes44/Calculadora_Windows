@@ -412,5 +412,10 @@ public class Calculadora extends JFrame implements ActionListener{
 		}
 		
 	}
-	
+
+
+	public void cambiarSigno(String textoObtenido) {
+
+	}
+
 }
