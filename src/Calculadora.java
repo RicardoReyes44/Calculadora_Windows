@@ -337,9 +337,27 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 
 
-    public void concatenacionPersonalizada(char caracter) {
+    public void concatenacionOperacional(String cadena) {
 		
-		
+        switch(caracter) {
+    	
+    	case 's':
+    		break;
+
+    	case '':
+    		break;
+
+    	case 'm':
+    		break;
+
+    	case 'd':
+    		break;
+    	
+    	case ''
+    	
+    	}
+    	
+		txtCaja.setText("");
 		
 	}
 
