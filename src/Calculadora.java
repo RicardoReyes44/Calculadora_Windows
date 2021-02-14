@@ -22,7 +22,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	Matcher buscador;
 	
 	ScriptEngine escaner = new ScriptEngineManager().getEngineByName("js");
-	StringBuilder resultado = new StringBuilder();
+	String resultado = "";
 	
 	Font fuente = new Font("Calibri", 1, 20);
 	Font fuente2 = new Font("Calibri", 1, 50);
@@ -285,7 +285,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 		}else if(eventoObtenido==btnMasMenos) {
 
-			
+			cambiarSigno(textoObtenido);
 			
 		}else{
 			
@@ -415,7 +415,13 @@ public class Calculadora extends JFrame implements ActionListener{
 
 
 	public void cambiarSigno(String textoObtenido) {
-
+		
+		if(textoObtenido.substring(0, 1).equals("-")) {
+			
+		}else {
+			
+		}
+		
 	}
 
 }
