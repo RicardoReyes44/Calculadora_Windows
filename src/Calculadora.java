@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.swing.*;
 
 
@@ -19,6 +20,7 @@ public class Calculadora extends JFrame implements ActionListener{
 	GridBagConstraints gbc = new GridBagConstraints();
 	
 	Pattern patron = Pattern.compile("\\.");
+	Pattern patron2 = Pattern.compile("[x/+-]");
 	Matcher buscador;
 	
 	ScriptEngine escaner = new ScriptEngineManager().getEngineByName("js");
@@ -285,7 +287,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 		}else if(eventoObtenido==btnMult) {
 			
-			concatenacionOperacional("x", textoObtenido);
+			concatenacionOperacional("*", textoObtenido);
 			
 		}else if(eventoObtenido==btnDiv) {
 			
@@ -294,6 +296,10 @@ public class Calculadora extends JFrame implements ActionListener{
 		}else if(eventoObtenido==btnMasMenos) {
 
 			cambiarSigno(textoObtenido);
+			
+		}else if(eventoObtenido==btnIgual) {
+
+			verificarOperador("Igual", textoObtenido);
 			
 		}else{
 			
@@ -343,78 +349,86 @@ public class Calculadora extends JFrame implements ActionListener{
 
 	public void concatenacionPersonalizada(String cadena, String textoObtenido) {
 		
+		resultado+=cadena;
 		txtCaja.setText((textoObtenido.equals("0") ? "" : textoObtenido)+cadena);
-
+		
 	}
 
     
     public void verificarOperador(String cadena, String textoObtenido) {
 
-        switch(cadena) {
-     	
-     	case "Suma":
-     		
-     		concatenacionOperacional("+", textoObtenido);
-     		
-     		break;
+    	if(!textoObtenido.equals("0")) {
+    		switch(cadena) {
+         	
+         	case "Suma":
+         		
+         		concatenacionOperacional("+", textoObtenido);
+         		
+         		break;
 
-     		
-     	case "Resta":
-     		
-     		concatenacionOperacional("-", textoObtenido);
-     		
-     		break;
+         		
+         	case "Resta":
+         		
+         		concatenacionOperacional("-", textoObtenido);
+         		
+         		break;
 
-     		
-     	case "Multiplicacion":
-     		
-     		concatenacionOperacional("*", textoObtenido);
-     		
-     		break;
+         		
+         	case "Multiplicacion":
+         		
+         		concatenacionOperacional("*", textoObtenido);
+         		
+         		break;
 
-     		
-     	case "Division":
-     		
-     		concatenacionOperacional("/", textoObtenido);
-     		
-     		break;
-     	
-     		
-     	case "Raiz":
-     		
-     		concatenacionOperacional("√", textoObtenido);
-     		
-     		break;
-     	
-   
-     	case "Cuadrado":
-     		
-     		concatenacionOperacional("^2", textoObtenido);
-     		
-     		break;
+         		
+         	case "Division":
+         		
+         		concatenacionOperacional("/", textoObtenido);
+         		
+         		break;
+         	
+         		
+         	case "Raiz":
+         		
+         		concatenacionOperacional("√", textoObtenido);
+         		
+         		break;
+         	
+       
+         	case "Cuadrado":
+         		
+         		concatenacionOperacional("^2", textoObtenido);
+         		
+         		break;
 
- 
-     	case "UnoSobreX":
-     		
-    		
-     		
-     		break;
+     
+         	case "UnoSobreX":
+         		
+        		
+         		
+         		break;
 
-     		
-     	case "Igual":
-     		
-     		
-     		
-     		break;
-     	
-     	}
+         		
+         	case "Igual":
+
+        		try {
+        			resultado=String.valueOf(escaner.eval(resultado));
+        			txtCaja.setText(resultado);
+        		} catch (ScriptException e) {
+       				e.printStackTrace();
+       			}
+         		
+         		break;
+         	
+         	}
+    	}
     	
 	}
     
     
     public void concatenacionOperacional(String cadena, String textoObtenido) {
-
-    	resultado+=textoObtenido+cadena;
+    	
+    	resultado+=cadena;
     	txtCaja.setText("0");
 
    	}
@@ -428,7 +442,6 @@ public class Calculadora extends JFrame implements ActionListener{
 	public void borrar(String textoObtenido) {
 		
 		if(!textoObtenido.equals("0")) {
-
 
 			if(textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("-")
 				|| textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("0")
