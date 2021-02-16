@@ -257,7 +257,7 @@ public class Calculadora extends JFrame implements ActionListener{
 
 		}else if(eventoObtenido==btnUnoSobreX) {
 
-			concatenacionOperacional("UnoSobreX", textoObtenido);
+			verificarOperador("UnoSobreX", textoObtenido);
 
 		}else if(eventoObtenido==btnPunto) {
 			
@@ -404,7 +404,13 @@ public class Calculadora extends JFrame implements ActionListener{
      
          	case "UnoSobreX":
          		
-        		
+        		try {
+					resultado=String.valueOf(escaner.eval("1/"+resultado));
+					txtCaja.setText(resultado);
+				} catch (ScriptException e1) {
+					limpiarResultado();
+					txtCaja.setText("0");
+				}
          		
          		break;
 
@@ -415,7 +421,8 @@ public class Calculadora extends JFrame implements ActionListener{
         			resultado=String.valueOf(escaner.eval(resultado));
         			txtCaja.setText(resultado);
         		} catch (ScriptException e) {
-       				e.printStackTrace();
+        			limpiarResultado();
+					txtCaja.setText("0");
        			}
          		
          		break;
