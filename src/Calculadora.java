@@ -282,6 +282,10 @@ public class Calculadora extends JFrame implements ActionListener{
 			
 			concatenacionOperacional("+", textoObtenido);
 			
+		}else if(eventoObtenido==btnRaiz) {
+			
+			verificarOperador("Raiz", textoObtenido);
+			
 		}else if(eventoObtenido==btnResta) {
 			
 			concatenacionOperacional("-", textoObtenido);
@@ -333,8 +337,6 @@ public class Calculadora extends JFrame implements ActionListener{
 			limpiarResultado();
 			txtCaja.setText("Error X.x");
 		}
-		
-		System.out.println(resultado);
 
 	}
 
@@ -400,7 +402,9 @@ public class Calculadora extends JFrame implements ActionListener{
          		
         case "Raiz":
          		
-         	concatenacionOperacional("√", textoObtenido);
+        	resultado=String.valueOf(escaner.eval(resultado));
+         	resultado=String.valueOf(Math.sqrt(Double.parseDouble(resultado)));
+         	txtCaja.setText(resultado);
          		
          	break;
          	
@@ -454,9 +458,9 @@ public class Calculadora extends JFrame implements ActionListener{
 			if(textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("-")
 				|| textoObtenido.length()==2 && textoObtenido.substring(0, 1).equals("0")
 				|| textoObtenido.length()==1){
-				limpiarResultado();
 				txtCaja.setText("0");
 			}else {
+				resultado=resultado.substring(0, resultado.length()-1);
 				txtCaja.setText(textoObtenido.substring(0, textoObtenido.length()-1));
 			}
 			
