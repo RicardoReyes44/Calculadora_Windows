@@ -249,10 +249,11 @@ public class Calculadora extends JFrame implements ActionListener{
 		textoObtenido = txtCaja.getText();
 
 
+		try {
 		if(eventoObtenido==btnCero) {
 	        
-			if(!textoObtenido.equals("0")){
-			    concatenacionPersonalizada("0", textoObtenido);
+			if(!textoObtenido.equals("0")) {
+				concatenacionPersonalizada("0", textoObtenido);
 			}
 
 		}else if(eventoObtenido==btnUnoSobreX) {
@@ -301,6 +302,10 @@ public class Calculadora extends JFrame implements ActionListener{
 
 			verificarOperador("Igual", textoObtenido);
 			
+		}else if(eventoObtenido==btnCuadrado) {
+
+			verificarOperador("Cuadrado", textoObtenido);
+			
 		}else{
 			
 			if(eventoObtenido==btnUno) {
@@ -324,6 +329,12 @@ public class Calculadora extends JFrame implements ActionListener{
 			}
 
 		}
+		}catch(ScriptException e) {
+			limpiarResultado();
+			txtCaja.setText("Error X.x");
+		}
+		
+		System.out.println(resultado);
 
 	}
 
@@ -355,80 +366,70 @@ public class Calculadora extends JFrame implements ActionListener{
 	}
 
     
-    public void verificarOperador(String cadena, String textoObtenido) {
+    public void verificarOperador(String cadena, String textoObtenido) throws ScriptException {
 
-    	if(!textoObtenido.equals("0")) {
-    		switch(cadena) {
+    	switch(cadena) {
          	
-         	case "Suma":
+        case "Suma":
          		
-         		concatenacionOperacional("+", textoObtenido);
+         	concatenacionOperacional("+", textoObtenido);
          		
-         		break;
+         	break;
 
          		
-         	case "Resta":
+        case "Resta":
          		
-         		concatenacionOperacional("-", textoObtenido);
+         	concatenacionOperacional("-", textoObtenido);
          		
-         		break;
+         	break;
 
          		
-         	case "Multiplicacion":
+        case "Multiplicacion":
          		
-         		concatenacionOperacional("*", textoObtenido);
+         	concatenacionOperacional("*", textoObtenido);
          		
-         		break;
+         	break;
 
          		
-         	case "Division":
+        case "Division":
          		
-         		concatenacionOperacional("/", textoObtenido);
+         	concatenacionOperacional("/", textoObtenido);
          		
-         		break;
+         	break;
          	
          		
-         	case "Raiz":
+        case "Raiz":
          		
-         		concatenacionOperacional("√", textoObtenido);
+         	concatenacionOperacional("√", textoObtenido);
          		
-         		break;
+         	break;
          	
        
-         	case "Cuadrado":
-         		
-         		concatenacionOperacional("^2", textoObtenido);
-         		
-         		break;
+         case "Cuadrado":
+
+            resultado=String.valueOf(escaner.eval(resultado));
+        	resultado=String.valueOf(Math.pow(Double.parseDouble(resultado), 2));
+        	txtCaja.setText(resultado);
+ 
+         	break;
 
      
-         	case "UnoSobreX":
+         case "UnoSobreX":
          		
-        		try {
-					resultado=String.valueOf(escaner.eval("1/"+resultado));
-					txtCaja.setText(resultado);
-				} catch (ScriptException e1) {
-					limpiarResultado();
-					txtCaja.setText("0");
-				}
+			resultado=String.valueOf(escaner.eval("1/"+resultado));
+			txtCaja.setText(resultado);
          		
-         		break;
+         	break;
 
          		
-         	case "Igual":
+         case "Igual":
 
-        		try {
-        			resultado=String.valueOf(escaner.eval(resultado));
-        			txtCaja.setText(resultado);
-        		} catch (ScriptException e) {
-        			limpiarResultado();
-					txtCaja.setText("0");
-       			}
+       		resultado=String.valueOf(escaner.eval(resultado));
+       		txtCaja.setText(resultado);
          		
-         		break;
+        	break;
          	
-         	}
-    	}
+         }
     	
 	}
     
