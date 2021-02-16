@@ -274,8 +274,9 @@ public class Calculadora extends JFrame implements ActionListener{
 			txtCaja.setText("0");
 			
 		}else if(eventoObtenido==btnCE) {
-			//pendiente
-			limpiarResultado();
+			
+			int longitud = textoObtenido.length();
+			resultado = resultado.substring(0, resultado.length()-longitud);
 			txtCaja.setText("0");
 			
 		}else if(eventoObtenido==btnSuma) {
@@ -337,7 +338,7 @@ public class Calculadora extends JFrame implements ActionListener{
 			limpiarResultado();
 			txtCaja.setText("Error X.x");
 		}
-
+		System.out.println(resultado);
 	}
 
 
@@ -490,12 +491,14 @@ public class Calculadora extends JFrame implements ActionListener{
 
 	public void cambiarSigno(String textoObtenido) {
 		
-		if(textoObtenido.substring(0, 1).equals("-")) {
-			resultado = textoObtenido.replace("-", "");
-			txtCaja.setText(resultado);
-		}else {
-			resultado = "-"+textoObtenido;
-			txtCaja.setText(resultado);
+		if(!textoObtenido.equals("0")) {
+			if(textoObtenido.substring(0, 1).equals("-")) {
+				resultado = textoObtenido.replace("-", "");
+				txtCaja.setText(resultado);
+			}else {
+				resultado = "-"+textoObtenido;
+				txtCaja.setText(resultado);
+			}
 		}
 		
 	}
