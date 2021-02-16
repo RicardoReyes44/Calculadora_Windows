@@ -276,8 +276,11 @@ public class Calculadora extends JFrame implements ActionListener{
 		}else if(eventoObtenido==btnCE) {
 			
 			int longitud = textoObtenido.length();
-			resultado = resultado.substring(0, resultado.length()-longitud);
-			txtCaja.setText("0");
+
+			if(!resultado.equals("")) {
+				resultado = resultado.substring(0, resultado.length()-longitud);
+				txtCaja.setText("0");
+			}
 			
 		}else if(eventoObtenido==btnSuma) {
 			
@@ -286,6 +289,10 @@ public class Calculadora extends JFrame implements ActionListener{
 		}else if(eventoObtenido==btnRaiz) {
 			
 			verificarOperador("Raiz", textoObtenido);
+			
+		}else if(eventoObtenido==btnPorcentaje) {
+			
+			verificarOperador("Porcentaje", textoObtenido);
 			
 		}else if(eventoObtenido==btnResta) {
 			
@@ -337,8 +344,8 @@ public class Calculadora extends JFrame implements ActionListener{
 		}catch(ScriptException e) {
 			limpiarResultado();
 			txtCaja.setText("Error X.x");
-		}
-		System.out.println(resultado);
+		}System.out.println(resultado);
+
 	}
 
 
@@ -402,21 +409,40 @@ public class Calculadora extends JFrame implements ActionListener{
          	
          		
         case "Raiz":
-         		
-        	resultado=String.valueOf(escaner.eval(resultado));
-         	resultado=String.valueOf(Math.sqrt(Double.parseDouble(resultado)));
-         	txtCaja.setText(resultado);
+         	
+        	try {
+        		
+        		resultado=String.valueOf(escaner.eval(resultado));
+             	resultado=String.valueOf(Math.sqrt(Double.parseDouble(resultado)));
+             	txtCaja.setText(resultado);
+             	
+        	}catch(NumberFormatException e) {
+        		txtCaja.setText("0");
+            }
          		
          	break;
          	
        
          case "Cuadrado":
 
-            resultado=String.valueOf(escaner.eval(resultado));
-        	resultado=String.valueOf(Math.pow(Double.parseDouble(resultado), 2));
-        	txtCaja.setText(resultado);
+        	try {
+        		
+                resultado=String.valueOf(escaner.eval(resultado));
+        	    resultado=String.valueOf(Math.pow(Double.parseDouble(resultado), 2));
+        	    txtCaja.setText(resultado);
+        	    
+    	    }catch(NumberFormatException e) {
+    	    	txtCaja.setText("0");
+            }
  
          	break;
+         
+
+         case "Porcentaje":
+
+            concatenacionOperacional("%", textoObtenido);    
+
+          	break;
 
      
          case "UnoSobreX":
@@ -430,7 +456,16 @@ public class Calculadora extends JFrame implements ActionListener{
          case "Igual":
 
        		resultado=String.valueOf(escaner.eval(resultado));
-       		txtCaja.setText(resultado);
+       		
+       		if(resultado.equals("0")) {
+       			
+       			limpiarResultado();
+       			txtCaja.setText("0");
+       			
+       		}else {
+       			txtCaja.setText(resultado);
+       		}
+       		
          		
         	break;
          	
@@ -461,9 +496,9 @@ public class Calculadora extends JFrame implements ActionListener{
 				|| textoObtenido.length()==1){
 				txtCaja.setText("0");
 			}else {
-				resultado=resultado.substring(0, resultado.length()-1);
 				txtCaja.setText(textoObtenido.substring(0, textoObtenido.length()-1));
 			}
+			resultado=resultado.substring(0, resultado.length()-1);
 			
 
 		}
