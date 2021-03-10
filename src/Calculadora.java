@@ -417,7 +417,8 @@ public class Calculadora extends JFrame implements ActionListener{
              	txtCaja.setText(resultado);
              	
         	}catch(NumberFormatException e) {
-        		txtCaja.setText("0");
+        		txtCaja.setText("Error X.x");
+        		resultado="";
             }
          		
          	break;
